@@ -79,7 +79,7 @@ for client_configs in CLIENTS:
                   
                    break
               
-               print(f"Tem task ainda rodando...")
+               print("Task em execução...")
               
                time.sleep(60)
 
