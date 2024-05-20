@@ -28,8 +28,8 @@ O script automatiza o processo de exportação de logs do AWS CloudWatch para um
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seuusuario/exportador-logs-cloudwatch.git
-   cd exportador-logs-cloudwatch
+   git clone https://github.com/DanielleSM/exportador_logs_S3.git
+   cd exportador_logs_S3
    ```
 
 2. Instale as dependências necessárias:
