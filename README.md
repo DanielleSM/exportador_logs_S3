@@ -81,7 +81,7 @@ Se desejar modificar o intervalo de espera entre as verificações de tarefas de
 ```python
 while True:
     # ...código anterior...
-    print(f"Tem task ainda rodando...")
+    print("Task em execução...")
     time.sleep(60) 
 ```
 Modifique o valor '60' para o número de segundos desejado. Isso ajustará o intervalo entre as verificações de tarefas de exportação em andamento, conforme necessário.
