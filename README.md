@@ -70,10 +70,32 @@ CLIENTS = [
    python export_logs.py
    ```
 
-2. O script irá:
+2. **O script irá**:
    - Listar todos os grupos de logs com base nos prefixos fornecidos.
    - Exportar logs dentro do intervalo de datas especificado.
    - Monitorar continuamente as tarefas de exportação em andamento e iniciar novas tarefas conforme as tarefas são concluídas.
+
+3. **Modificando o Intervalo de Espera (Sleep)**
+   
+Se desejar modificar o intervalo de espera entre as verificações de tarefas de exportação em andamento, você pode alterar o valor do sleep dentro do loop principal do script.
+```python
+while True:
+    # ...código anterior...
+    print(f"Tem task ainda rodando...")
+    time.sleep(60) 
+```
+Modifique o valor '60' para o número de segundos desejado. Isso ajustará o intervalo entre as verificações de tarefas de exportação em andamento, conforme necessário.
+
+4. **Modificando o Nome da Tarefa**
+   
+O nome da tarefa (task_name) é gerado automaticamente no script com base nos valores das variáveis client, log_group, from_unix e to_unix. Caso deseje alterar o nome da tarefa para outro valor de sua escolha, você pode modificar a linha correspondente no script.
+
+```python
+task_name = f'cloudwatch_s3_logs_{client}_{log_group}_{from_unix}_{to_unix}'.replace('/', '_').replace('-', '_')
+```
+Substitua pelo nome desejado para a sua tarefa.
+
+
 
 ### Fluxo do Script:
 1. **Listar Grupos de Logs**: Usa o paginador `describe_log_groups` para recuperar grupos de logs com base nos prefixos.
